@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Buck Converter | Daniel Valentine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo"><span class="title">D V</span></a>
+					<nav><ul><li><a href="#menu">Menu</a></li></ul></nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+					<h1>Buck Converter</h1>
+					<span class="image main"><img src="images/buck-main.jpg" alt="" /></span>
+
+					<h2>Overview</h2>
+					<p>Asynchronous buck converter designed around the LM22676, stepping down 24V to 5-7.5V at 1.5A continuous output. </p>
+
+					<h2>Key Specs</h2>
+					<ul>
+						<li>IC: LM22676MRE (Texas Instruments)</li>
+						<li>Input voltage: 24V</li>
+						<li>Output voltage: 5-7.5V</li>
+						<li>Output current: 2A continuous</li>
+						<li>Switching frequency: set by external resistor per datasheet</li>
+					</ul>
+
+					<h2>What I Did</h2>
+					<ul>
+						<li>Selected components (inductor, output capacitor, diode) per LM22676 datasheet design procedure</li>
+						<li>Calculated inductor ripple current and output voltage ripple given load conditions and switching frequency</li>
+						<li>Laid out PCB following TI layout recommendations for minimizing switching noise</li>
+            <li>Obtained an efficiency of 90%</li>
+						<li>Futher efficiency and transient response characterization planned</li>
+					</ul>
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Daniel Valentine</li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
