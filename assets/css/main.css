@@ -3327,3 +3327,9 @@ input, select, textarea {
 			}
 
 		}
+#main .tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+}
