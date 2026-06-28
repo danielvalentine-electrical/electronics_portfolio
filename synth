@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Synthesizer Controller | Daniel Valentine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo"><span class="title">D V</span></a>
+					<nav><ul><li><a href="#menu">Menu</a></li></ul></nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+					<h1>Synthesizer Controller with Ferrofluid Visual</h1>
+					<span class="image main"><img src="images/synth-main.jpg" alt="" /></span>
+
+					<h2>Overview</h2>
+					<p>A 12-key mechanical keyboard controller for real-time audio synthesis, built around a custom KiCad PCB and Arduino Uno. Keystrokes map to synthesis and modulation parameters in Max/MSP, while a MOSFET-driven electromagnet animates ferrofluid in response to musical input.</p>
+
+					<h2>Key Specs</h2>
+					<ul>
+						<li>PCB: 12-key mechanical keyboard, designed and laid out in KiCad</li>
+						<li>Microcontroller: Arduino Uno</li>
+						<li>Software: Max/MSP (real-time audio synthesis and modulation)</li>
+						<li>Actuator: MOSFET switching circuit driving a DC electromagnet</li>
+						<li>Enclosure: 3D printed in FDM, modeled in Fusion 360</li>
+					</ul>
+
+					<h2>What I Did</h2>
+					<ul>
+						<li>Designed and laid out a 12-key mechanical keyboard PCB in KiCad, then fabricated and assembled the board</li>
+						<li>Wrote Arduino firmware to read keyswitch states and communicate with Max/MSP over serial communication</li>
+						<li>Developed a Max/MSP patch mapping keystrokes to real-time synthesis parameters including pitch, modulation, and effects</li>
+						<li>Designed a MOSFET-based switching circuit to drive a DC electromagnet, creating dynamic ferrofluid motion synchronized to keyboard input</li>
+						<li>Modeled and 3D printed a custom electronic enclosure in Fusion 360 using FDM manufacturing</li>
+					</ul>
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Daniel Valentine</li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
