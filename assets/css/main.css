@@ -3327,9 +3327,14 @@ input, select, textarea {
 			}
 
 		}
-#main .tiles {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
-    margin: 0 auto;
+#main .inner section.tiles {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(300px, 400px)) !important;
+    justify-content: center !important;
+    gap: 1.5em !important;
+}
+
+#main .inner section.tiles article {
+    width: 100% !important;
+    height: 300px !important;
 }
