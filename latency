@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Phone Latency Tester | Daniel Valentine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo"><span class="title">D V</span></a>
+					<nav><ul><li><a href="#menu">Menu</a></li></ul></nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+					<h1>Phone Latency Tester</h1>
+					<span class="image main"><img src="images/latency-main.jpg" alt="" /></span>
+
+					<h2>Overview</h2>
+					<p>Hardware/software system for measuring end-to-end touch-to-audio latency in mobile devices. Built on the Bela embedded audio platform using C++, with an analog accelerometer detecting the physical tap event and audio analysis capturing the device's speaker response — achieving approximately 226 µs measurement resolution.</p>
+
+					<h2>Key Specs</h2>
+					<ul>
+						<li>Platform: Bela (BeagleBone Black-based embedded audio)</li>
+						<li>Language: C++ (real-time audio/sensor acquisition)</li>
+						<li>Sensor: Analog accelerometer for tap detection</li>
+						<li>Measurement resolution: ~226 µs</li>
+						<li>Post-processing: Python (histogram analysis, false-trigger filtering)</li>
+					</ul>
+
+					<h2>What I Did</h2>
+					<ul>
+						<li>Designed and implemented real-time C++ firmware on the Bela platform to synchronously sample accelerometer and audio signals</li>
+						<li>Developed tap-detection logic with false-trigger filtering to isolate genuine touch events from noise</li>
+						<li>Designed and 3D-printed a custom sensor mount in FreeCAD to ensure repeatable, consistent tap events across test runs</li>
+						<li>Post-processed raw timestamp data in Python, generating latency histograms and statistical summaries across multiple devices</li>
+					</ul>
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Daniel Valentine</li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
