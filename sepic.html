@@ -9,37 +9,38 @@
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
-
 			<header id="header">
 				<div class="inner">
 					<a href="index.html" class="logo"><span class="title">D V</span></a>
 					<nav><ul><li><a href="#menu">Menu</a></li></ul></nav>
 				</div>
 			</header>
-
 			<nav id="menu">
 				<h2>Menu</h2>
 				<ul>
 					<li><a href="index.html">Home</a></li>
 				</ul>
 			</nav>
-
 			<div id="main">
 				<div class="inner">
 					<h1>SEPIC Converter</h1>
+
 					<div class="slideshow">
-    			<div class="slides">
-        			<img src="images/sepic1.jpg" class="slide active" alt="SEPIC converter photo 1" />
-        			<img src="images/sepic2.jpg" class="slide" alt="SEPIC converter photo 2" />
-        			<img src="images/sepic3.jpg" class="slide" alt="SEPIC converter photo 3" />
-    			</div>
-    			<button class="slide-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
-				<button class="slide-arrow next" onclick="changeSlide(1)">&#10095;</button>
-    			<div class="slide-dots"></div>
-				</div>
+						<div class="slides">
+							<img src="images/sepic-top.jpeg" class="slide active" alt="SEPIC converter top view" />
+							<img src="images/sepic-kicad.png" class="slide" alt="SEPIC KiCad schematic" />
+							<img src="images/current-sense.jpeg" class="slide" alt="Current sense transformer" />
+							<img src="images/pv-iv-characteristic.png" class="slide" alt="PV panel I-V characteristic" />
+							<img src="images/pv-power-vs-duty-cycle.png" class="slide" alt="PV power vs duty cycle" />
+							<img src="images/pv-sim.png" class="slide" alt="LTspice simulation" />
+						</div>
+						<button class="slide-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+						<button class="slide-arrow next" onclick="changeSlide(1)">&#10095;</button>
+						<div class="slide-dots"></div>
+					</div>
+
 					<h2>Overview</h2>
 					<p>TI F28027-controlled SEPIC converter built on perfboard with hand-wound inductors on EFD15 N87 ferrite cores. Implements MPPT from a 10W PV panel, achieving 8.97W vs 7.93W direct — a 13% improvement.</p>
-
 					<h2>Key Specs</h2>
 					<ul>
 						<li>Microcontroller: TI F28027 C2000 LaunchPad</li>
@@ -48,7 +49,6 @@
 						<li>Current-sense transformer: 1:36 ratio, 110Ω burden</li>
 						<li>MPP output: 8.97W at D=50%</li>
 					</ul>
-
 					<h2>What I Did</h2>
 					<ul>
 						<li>Hand-wound inductors on EFD15/8/5 N87 ferrite cores</li>
@@ -59,7 +59,6 @@
 					</ul>
 				</div>
 			</div>
-
 			<footer id="footer">
 				<div class="inner">
 					<ul class="copyright">
@@ -67,12 +66,44 @@
 					</ul>
 				</div>
 			</footer>
-
 		</div>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+
+		<script>
+			let currentSlide = 0;
+			const slides = document.querySelectorAll('.slide');
+			const dotsContainer = document.querySelector('.slide-dots');
+
+			slides.forEach((_, i) => {
+				const dot = document.createElement('span');
+				dot.classList.add('slide-dot');
+				if (i === 0) dot.classList.add('active');
+				dot.onclick = () => goToSlide(i);
+				dotsContainer.appendChild(dot);
+			});
+
+			const dots = document.querySelectorAll('.slide-dot');
+
+			function showSlide(index) {
+				slides.forEach(s => s.classList.remove('active'));
+				dots.forEach(d => d.classList.remove('active'));
+				slides[index].classList.add('active');
+				dots[index].classList.add('active');
+			}
+
+			function changeSlide(direction) {
+				currentSlide = (currentSlide + direction + slides.length) % slides.length;
+				showSlide(currentSlide);
+			}
+
+			function goToSlide(index) {
+				currentSlide = index;
+				showSlide(currentSlide);
+			}
+		</script>
 	</body>
 </html>
