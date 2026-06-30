@@ -27,11 +27,18 @@
 			<div id="main">
 				<div class="inner">
 					<h1>Buck Converter</h1>
-					<span class="image main"><img src="images/buck-main.jpg" alt="" /></span>
+										<div class="slideshow">
+					    <div class="slides">
+					        <img src="images/pcb_v1.png" class="slide active" alt="Buck converter PCB layout" />
+					        <img src="images/irl-assembley.png" class="slide" alt="Buck converter assembled board" />
+					    </div>
+					    <button class="slide-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+					    <button class="slide-arrow next" onclick="changeSlide(1)">&#10095;</button>
+					    <div class="slide-dots"></div>
+					</div>
 
 					<h2>Overview</h2>
 					<p>Asynchronous buck converter designed around the LM22676, stepping down 24V to 5-7.5V at 1.5A continuous output. </p>
-
 					<h2>Key Specs</h2>
 					<ul>
 						<li>IC: LM22676MRE (Texas Instruments)</li>
@@ -66,5 +73,37 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+	<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.slide-dots');
+
+    slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.classList.add('slide-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.slide-dot');
+
+    function showSlide(index) {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        showSlide(currentSlide);
+    }
+</script>
 	</body>
 </html>
