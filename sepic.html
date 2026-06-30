@@ -27,8 +27,16 @@
 			<div id="main">
 				<div class="inner">
 					<h1>SEPIC Converter</h1>
-					<span class="image main"><img src="images/sepic-main.jpg" alt="" /></span>
-
+					<div class="slideshow">
+    			<div class="slides">
+        			<img src="images/sepic1.jpg" class="slide active" alt="SEPIC converter photo 1" />
+        			<img src="images/sepic2.jpg" class="slide" alt="SEPIC converter photo 2" />
+        			<img src="images/sepic3.jpg" class="slide" alt="SEPIC converter photo 3" />
+    			</div>
+    			<button class="slide-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+				<button class="slide-arrow next" onclick="changeSlide(1)">&#10095;</button>
+    			<div class="slide-dots"></div>
+				</div>
 					<h2>Overview</h2>
 					<p>TI F28027-controlled SEPIC converter built on perfboard with hand-wound inductors on EFD15 N87 ferrite cores. Implements MPPT from a 10W PV panel, achieving 8.97W vs 7.93W direct — a 13% improvement.</p>
 
