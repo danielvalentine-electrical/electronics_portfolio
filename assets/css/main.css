@@ -3338,3 +3338,66 @@ input, select, textarea {
     width: 100% !important;
     height: 300px !important;
 }
+.slideshow {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 2em auto;
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 0.6em 0.9em;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 4px;
+}
+
+.slide-arrow.prev { left: 10px; }
+.slide-arrow.next { right: 10px; }
+
+.slide-dots {
+    text-align: center;
+    margin-top: 0.8em;
+}
+
+.slide-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.slide-dot.active {
+    background: #555;
+}
